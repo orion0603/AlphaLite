@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>AlphaLite needs microphone access to convert your speech to text.</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>AlphaLite needs speech recognition to understand your voice commands.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>remote-notification</string>
+    </array>
+    <key>UNUserNotificationCenterUsageDescription</key>
+    <string>AlphaLite needs to send you reminders and notifications.</string>
+</dict>
+</plist> 

@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 class ThemeManager: ObservableObject {
     @Published var colorScheme: ColorScheme? = .light

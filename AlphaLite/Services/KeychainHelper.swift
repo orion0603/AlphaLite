@@ -56,4 +56,7 @@ class KeychainHelper {
             return false
         }
     }
+    
+    static func save(key: String, value: String) {}
+    static func fetch(key: String) -> String? { nil }
 } 

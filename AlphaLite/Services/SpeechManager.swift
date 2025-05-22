@@ -2,8 +2,8 @@ import Foundation
 import Speech
 import AVFoundation
 
-class SpeechManager: ObservableObject {
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
+class SpeechManager: NSObject, SFSpeechRecognizerDelegate {
+    let recognizer = SFSpeechRecognizer()
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
@@ -48,7 +48,7 @@ class SpeechManager: ObservableObject {
         audioEngine.prepare()
         try audioEngine.start()
         
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest) { [weak self] result, error in
+        recognitionTask = recognizer?.recognitionTask(with: recognitionRequest) { [weak self] result, error in
             guard let self = self else { return }
             
             if let result = result {

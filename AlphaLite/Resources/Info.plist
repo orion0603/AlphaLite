@@ -26,8 +26,6 @@
     <string>AlphaLite needs speech recognition to convert your voice input into text.</string>
     <key>NSRemindersUsageDescription</key>
     <string>AlphaLite needs access to your reminders to create and manage reminders.</string>
-    <key>NSCriticalAlertsUsageDescription</key>
-    <string>Needed for critical reminders.</string>
     <key>UIApplicationSceneManifest</key>
     <dict>
         <key>UIApplicationSupportsMultipleScenes</key>

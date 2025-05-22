@@ -7,6 +7,7 @@ class MemoryStore: ObservableObject {
     @Published private(set) var analytics: Analytics = Analytics()
     private let gptService: GPTService
     private let container: NSPersistentContainer
+    @Published var memories: [Memory] = []
     
     init(gptService: GPTService) {
         self.gptService = gptService

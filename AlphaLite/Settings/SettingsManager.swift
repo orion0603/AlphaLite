@@ -1,4 +1,5 @@
 import SwiftUI
+import Foundation
 
 class SettingsManager: ObservableObject {
     @Published var notificationsEnabled: Bool = true

@@ -35,10 +35,14 @@
 		1A1A1A1A1A1A1A1A1A1A1A2F /* SpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechManager.swift; sourceTree = "<group>"; };
 		1A1A1A1A1A1A1A1A1A1A1A31 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		1A1A1A1A1A1A1A1A1A1A1A32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A33 /* AlphaLite.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlphaLite.xcdatamodel; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A34 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A35 /* postBuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = postBuild.sh; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A36 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1A1A1A1A1A1A1A1A1A1A1A33 /* Frameworks */ = {
+		1A1A1A1A1A1A1A1A1A1A1A37 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -48,52 +52,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A1A1A1A1A1A1A1A1A1A1A34 = {
+		1A1A1A1A1A1A1A1A1A1A1A38 = {
 			isa = PBXGroup;
 			children = (
-				1A1A1A1A1A1A1A1A1A1A1A35 /* AlphaLite */,
-				1A1A1A1A1A1A1A1A1A1A1A36 /* Products */,
+				1A1A1A1A1A1A1A1A1A1A1A39 /* AlphaLite */,
+				1A1A1A1A1A1A1A1A1A1A1A3A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1A1A1A1A1A1A1A1A1A1A1A36 /* Products */ = {
+		1A1A1A1A1A1A1A1A1A1A1A3A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1A1A1A1A1A1A1A1A1A1A1A37 /* AlphaLite.app */,
+				1A1A1A1A1A1A1A1A1A1A1A3B /* AlphaLite.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1A1A1A1A1A1A1A1A1A1A1A35 /* AlphaLite */ = {
+		1A1A1A1A1A1A1A1A1A1A1A39 /* AlphaLite */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A34 /* Package.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A36 /* README.md */,
+				1A1A1A1A1A1A1A1A1A1A1A3C /* Scripts */,
+				1A1A1A1A1A1A1A1A1A1A1A3D /* Resources */,
+				1A1A1A1A1A1A1A1A1A1A1A3E /* App */,
+				1A1A1A1A1A1A1A1A1A1A1A3F /* Services */,
+				1A1A1A1A1A1A1A1A1A1A1A40 /* Settings */,
+				1A1A1A1A1A1A1A1A1A1A1A41 /* Models */,
+				1A1A1A1A1A1A1A1A1A1A1A33 /* AlphaLite.xcdatamodeld */,
+			);
+			path = AlphaLite;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A3C /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A35 /* postBuild.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A3D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A32 /* Info.plist */,
+				1A1A1A1A1A1A1A1A1A1A1A42 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A3E /* App */ = {
 			isa = PBXGroup;
 			children = (
 				1A1A1A1A1A1A1A1A1A1A1A1B /* AlphaLiteApp.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A1D /* ContentView.swift */,
-				1A1A1A1A1A1A1A1A1A1A1A1F /* AnalyticsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A3F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A2D /* GPTService.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A2F /* SpeechManager.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A21 /* ReminderStore.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A23 /* MemoryStore.swift */,
-				1A1A1A1A1A1A1A1A1A1A1A25 /* ChatThread.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A31 /* KeychainHelper.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A40 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
 				1A1A1A1A1A1A1A1A1A1A1A27 /* SettingsView.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A29 /* SettingsManager.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A2B /* ThemeManager.swift */,
-				1A1A1A1A1A1A1A1A1A1A1A2D /* GPTService.swift */,
-				1A1A1A1A1A1A1A1A1A1A1A2F /* SpeechManager.swift */,
-				1A1A1A1A1A1A1A1A1A1A1A31 /* KeychainHelper.swift */,
-				1A1A1A1A1A1A1A1A1A1A1A32 /* Info.plist */,
 			);
-			path = AlphaLite;
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A25 /* ChatThread.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1A1A1A1A1A1A1A1A1A1A1A38 /* AlphaLite */ = {
+		1A1A1A1A1A1A1A1A1A1A1A43 /* AlphaLite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1A1A1A1A1A1A1A1A1A1A1A39 /* Build configuration list for PBXNativeTarget "AlphaLite" */;
+			buildConfigurationList = 1A1A1A1A1A1A1A1A1A1A1A44 /* Build configuration list for PBXNativeTarget "AlphaLite" */;
 			buildPhases = (
-				1A1A1A1A1A1A1A1A1A1A1A3A /* Sources */,
-				1A1A1A1A1A1A1A1A1A1A1A33 /* Frameworks */,
-				1A1A1A1A1A1A1A1A1A1A1A3B /* Resources */,
+				1A1A1A1A1A1A1A1A1A1A1A45 /* Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A37 /* Frameworks */,
+				1A1A1A1A1A1A1A1A1A1A1A46 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -101,25 +157,25 @@
 			);
 			name = AlphaLite;
 			productName = AlphaLite;
-			productReference = 1A1A1A1A1A1A1A1A1A1A1A37 /* AlphaLite.app */;
+			productReference = 1A1A1A1A1A1A1A1A1A1A1A3B /* AlphaLite.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1A1A1A1A1A1A1A1A1A1A1A3C /* Project object */ = {
+		1A1A1A1A1A1A1A1A1A1A1A47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					1A1A1A1A1A1A1A1A1A1A1A38 = {
+					1A1A1A1A1A1A1A1A1A1A1A43 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
-			buildConfigurationList = 1A1A1A1A1A1A1A1A1A1A1A3D /* Build configuration list for PBXProject "AlphaLite" */;
+			buildConfigurationList = 1A1A1A1A1A1A1A1A1A1A1A48 /* Build configuration list for PBXProject "AlphaLite" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -127,18 +183,18 @@
 				en,
 				Base,
 			);
-			mainGroup = 1A1A1A1A1A1A1A1A1A1A1A34;
-			productRefGroup = 1A1A1A1A1A1A1A1A1A1A1A36 /* Products */;
+			mainGroup = 1A1A1A1A1A1A1A1A1A1A1A38;
+			productRefGroup = 1A1A1A1A1A1A1A1A1A1A1A3A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1A1A1A1A1A1A1A1A1A1A1A38 /* AlphaLite */,
+				1A1A1A1A1A1A1A1A1A1A1A43 /* AlphaLite */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1A1A1A1A1A1A1A1A1A1A1A3B /* Resources */ = {
+		1A1A1A1A1A1A1A1A1A1A1A46 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -148,7 +204,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1A1A1A1A1A1A1A1A1A1A1A3A /* Sources */ = {
+		1A1A1A1A1A1A1A1A1A1A1A45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -170,7 +226,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1A1A1A1A1A1A1A1A1A1A1A3E /* Debug */ = {
+		1A1A1A1A1A1A1A1A1A1A1A49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -233,7 +289,7 @@
 			};
 			name = Debug;
 		};
-		1A1A1A1A1A1A1A1A1A1A1A3F /* Release */ = {
+		1A1A1A1A1A1A1A1A1A1A1A4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,7 +345,7 @@
 			};
 			name = Release;
 		};
-		1A1A1A1A1A1A1A1A1A1A1A40 /* Debug */ = {
+		1A1A1A1A1A1A1A1A1A1A1A4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -299,7 +355,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlphaLite/Info.plist;
+				INFOPLIST_FILE = AlphaLite/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -318,7 +374,7 @@
 			};
 			name = Debug;
 		};
-		1A1A1A1A1A1A1A1A1A1A1A41 /* Release */ = {
+		1A1A1A1A1A1A1A1A1A1A1A4C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -328,7 +384,7 @@
 				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AlphaLite/Info.plist;
+				INFOPLIST_FILE = AlphaLite/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -350,25 +406,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1A1A1A1A1A1A1A1A1A1A1A3D /* Build configuration list for PBXProject "AlphaLite" */ = {
+		1A1A1A1A1A1A1A1A1A1A1A48 /* Build configuration list for PBXProject "AlphaLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A1A1A1A1A1A1A1A1A1A1A3E /* Debug */,
-				1A1A1A1A1A1A1A1A1A1A1A3F /* Release */,
+				1A1A1A1A1A1A1A1A1A1A1A49 /* Debug */,
+				1A1A1A1A1A1A1A1A1A1A1A4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1A1A1A1A1A1A1A1A1A1A1A39 /* Build configuration list for PBXNativeTarget "AlphaLite" */ = {
+		1A1A1A1A1A1A1A1A1A1A1A44 /* Build configuration list for PBXNativeTarget "AlphaLite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A1A1A1A1A1A1A1A1A1A1A40 /* Debug */,
-				1A1A1A1A1A1A1A1A1A1A1A41 /* Release */,
+				1A1A1A1A1A1A1A1A1A1A1A4B /* Debug */,
+				1A1A1A1A1A1A1A1A1A1A1A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1A1A1A1A1A1A1A1A1A1A1A3C /* Project object */;
+	rootObject = 1A1A1A1A1A1A1A1A1A1A1A47 /* Project object */;
 } 

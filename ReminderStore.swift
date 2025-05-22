@@ -1,9 +1,13 @@
 import Foundation
 import CoreData
 import UserNotifications
+import EventKit
 
 class ReminderStore: ObservableObject {
+    @Published private(set) var reminders: [Reminder] = []
     private let container: NSPersistentContainer
+    private let eventStore = EKEventStore()
+    private let dateParser = DateParser()
     
     init() {
         container = NSPersistentContainer(name: "AlphaLite")
@@ -14,6 +18,8 @@ class ReminderStore: ObservableObject {
         }
         
         requestNotificationPermission()
+        requestAccess()
+        loadReminders()
     }
     
     private func requestNotificationPermission() {

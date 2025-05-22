@@ -3,8 +3,10 @@ import CoreData
 import Accelerate
 
 class MemoryStore: ObservableObject {
-    private let container: NSPersistentContainer
+    @Published private(set) var chatThreads: [ChatThread] = []
+    @Published private(set) var analytics: Analytics = Analytics()
     private let gptService: GPTService
+    private let container: NSPersistentContainer
     
     init(gptService: GPTService) {
         self.gptService = gptService
@@ -15,21 +17,54 @@ class MemoryStore: ObservableObject {
                 print("Core Data failed to load: \(error.localizedDescription)")
             }
         }
+        
+        loadChatThreads()
+        loadAnalytics()
     }
     
-    func addMemory(_ sentence: String) async throws {
-        let embedding = try await gptService.getEmbedding(for: sentence)
-        
-        let context = container.viewContext
-        let memory = Memory(context: context)
+    // MARK: - Chat Thread Management
+    
+    func createNewThread(title: String, tags: [String] = []) -> ChatThread {
+        let thread = ChatThread(title: title, tags: tags)
+        chatThreads.append(thread)
+        saveChatThreads()
+        return thread
+    }
+    
+    func addMessage(_ message: Chat.Message, to thread: ChatThread) {
+        if let index = chatThreads.firstIndex(where: { $0.id == thread.id }) {
+            var updatedThread = thread
+            updatedThread.addMessage(message)
+            chatThreads[index] = updatedThread
+            saveChatThreads()
+            
+            // Track message in analytics
+            analytics.trackMessage(message)
+        }
+    }
+    
+    func deleteThread(_ thread: ChatThread) {
+        chatThreads.removeAll { $0.id == thread.id }
+        saveChatThreads()
+    }
+    
+    // MARK: - Memory Management
+    
+    func addMemory(_ content: String) {
+        let memory = Memory(context: container.viewContext)
         memory.id = UUID()
-        memory.sentence = sentence
-        memory.embedding = embedding
+        memory.content = content
+        memory.timestamp = Date()
         
-        try context.save()
+        do {
+            try container.viewContext.save()
+            analytics.trackMemoryCreation()
+        } catch {
+            print("Failed to save memory: \(error.localizedDescription)")
+        }
     }
     
-    func findSimilarMemories(to query: String, limit: Int = 3) async throws -> [String] {
+    func findSimilarMemories(to query: String) async throws -> [Memory] {
         let queryEmbedding = try await gptService.getEmbedding(for: query)
         
         let context = container.viewContext
@@ -47,6 +82,7 @@ class MemoryStore: ObservableObject {
         
         return similarities
             .sorted { $0.1 > $1.1 }
+            .prefix(3)
             .prefix(limit)
             .compactMap { $0.0.sentence }
     }
